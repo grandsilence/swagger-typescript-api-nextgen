@@ -1,0 +1,95 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Comment Escape Test",
+    "description": "Ask Foo <foo@bar.de> or see */api/foo",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "description": "Ask Foo <foo@bar.de> or see */api/foo",
+      "url": "https://your-domain.com"
+    }
+  ],
+  "tags": [],
+  "components": {
+    "schemas": {
+      "FooBarBaz": {
+        "description": "Ask Foo <foo@bar.de> or see */api/foo",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Ask Foo <foo@bar.de> or see */api/foo"
+          },
+          "name": {
+            "description": "Ask Foo <foo@bar.de> or see */api/foo",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    }
+  },
+  "paths": {
+    "/foobar": {
+      "post": {
+        "operationId": "FooBar",
+        "description": "Ask Foo <foo@bar.de> or see */api/foo",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ask Foo <foo@bar.de> or see */api/foo",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Ask Foo <foo@bar.de> or see */api/foo"
+          }
+        },
+        "tags": ["FooBar"],
+        "security": [],
+        "parameters": [
+          {
+            "name": "q",
+            "description": "Ask Foo <foo@bar.de> or see */api/foo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Ask Foo <foo@bar.de> or see */api/foo",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Ask Foo <foo@bar.de> or see */api/foo"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

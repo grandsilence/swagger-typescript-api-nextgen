@@ -6,7 +6,7 @@ module.exports = {
 
     let prettified = description;
 
-    prettified = _.replace(prettified, /\*\//g, "*/");
+    prettified = _.replace(prettified, /\*\//g, "&#42;/");
 
     const hasMultipleLines = _.includes(prettified, "\n");
 

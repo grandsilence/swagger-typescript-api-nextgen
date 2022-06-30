@@ -1,6 +1,7 @@
 const _ = require("lodash");
 const { config } = require("./config");
 const { TS_KEYWORDS, SCHEMA_TYPES } = require("./constants");
+const { formatDescription } = require("./common");
 
 const formatters = {
   [SCHEMA_TYPES.ENUM]: (content) => {
@@ -18,10 +19,12 @@ const formatters = {
       const extraSpace = "  ";
       const result = `${extraSpace}${part.field};\n`;
 
-      const comments = _.uniq(_.compact([part.title, part.description]).reduce(
-        (acc, comment) => [...acc, ...comment.split(/\n/g)],
-        [],
-      ));
+      const comments = _.uniq(
+        _.compact([part.title, formatDescription(part.description)]).reduce(
+          (acc, comment) => [...acc, ...comment.split(/\n/g)],
+          [],
+        ),
+      );
 
       const commonText = comments.length
         ? [
